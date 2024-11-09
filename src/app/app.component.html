@@ -1,0 +1,24 @@
+<div class="p-1 rounded lseg-outer-div">
+  <div class="container-fluid bg-light rounded">
+    <div>
+      <div class="text-center lseg-header content-title lseg-background text-white container-fluid rounded lseg-title">
+        <img src="./../assets/lseg-blue.jpg" alt="LSEG Logo" class="rounded lseg-icon" />
+        <span class="lseg-title-text">{{title}}</span>
+        <i class="bi bi-robot p-1"></i>
+      </div>
+      <label class="rounded p-1 lseg-background text-white mt-3 mb-2">{{welcomeMessage}}</label>
+      <div class="content bg-light container-fluid rounded m-1 lseg-chat-container" id="chat-container">
+        <router-outlet>
+          <app-chat-menu>
+          </app-chat-menu>
+        </router-outlet>
+      </div>
+    </div>
+    <div class="rounded lseg-send-section">
+      <button disabled class="rounded float-left lseg-width-100">
+        <label class="lseg-float-left fw-bold">Please select an option</label>
+        <i class="bi bi-send lseg-float-right"></i>
+      </button>
+    </div>
+  </div>
+</div>

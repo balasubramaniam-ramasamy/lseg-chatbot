@@ -1,0 +1,31 @@
+<div *ngFor="let hmenu of historyMenus">
+    <div *ngIf="hmenu?.userResponse?.length > 0" class="lseg-user-response lseg-float-right">
+        <i class="bi bi-person-circle text-primary  mt-1 lseg-float-left"></i>
+        <input disabled class="mb-2 rounded bg-light bg-gradient lseg-float-right lseg-user-input"
+            value="{{hmenu?.userResponse}}" />
+    </div>
+
+    <br *ngIf="hmenu?.userResponse?.length > 0" />
+    <br *ngIf="hmenu?.userResponse?.length > 0" />
+
+    <div>
+        <i class="bi bi-robot text-primary"></i>
+        <label class="form-label lseg-background text-white rounded lseg-menu-title">{{hmenu.title}}</label>
+        <select disabled="{{hmenu.disabled}}" (change)="onSelectChange($event)"
+            class="form-select rounded lseg-menu-select" size="{{hmenu.length}}">
+            <option *ngFor="let menu of hmenu; index as j">
+                {{menu.stockName || menu.stockExchange || menu.code}}
+            </option>
+        </select>
+    </div>
+
+    <br *ngIf="hmenu?.userResponse?.length > 0" />
+</div>
+<div class="row justify-content-center">
+    <button *ngIf="isLoading" class="lseg-background text-white mt-2 rounded" style="width: 25%;" type="button"
+        disabled>
+        <span class="spinner-border spinner-border-sm font-weight-bold" role="status" aria-hidden="true"></span>
+        Fetching...
+        <i class="bi bi-robot lseg-background text-white"></i>
+    </button>
+</div>
