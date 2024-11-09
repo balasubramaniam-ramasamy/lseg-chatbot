@@ -4,9 +4,14 @@
 ## What is this project about?
 * This is a simple chatbot
 
+## Which techstack is used?
+* Angular 17.
+
+## Which css framework is used?
+* Bootstrap 5
+
 ## Which boilerplate is used?
 * This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
-
 
 ## Summarize, what are the commands to run in order?
 * Please run below commands if you are comfortable. Otherwise, please, read the following sections for more detailed steps.

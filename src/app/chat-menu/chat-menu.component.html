@@ -1,6 +1,6 @@
 <div *ngFor="let hmenu of historyMenus">
     <div *ngIf="hmenu?.userResponse?.length > 0" class="lseg-user-response lseg-float-right">
-        <i class="bi bi-person-circle text-primary  mt-1 lseg-float-left"></i>
+        <i class="bi bi-person-circle text-primary ml-1 mt-1 lseg-float-left"></i>
         <input disabled class="mb-2 rounded bg-light bg-gradient lseg-float-right lseg-user-input"
             value="{{hmenu?.userResponse}}" />
     </div>
