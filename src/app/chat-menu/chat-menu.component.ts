@@ -57,6 +57,7 @@ export class ChatMenuComponent implements OnInit, AfterViewInit, OnChanges, DoCh
     }
   }
 
+  // Whenever the select control - menu values are changed, this method will be called.
   onSelectChange(event: any) {
     this.isLoading = true;
 
@@ -68,6 +69,7 @@ export class ChatMenuComponent implements OnInit, AfterViewInit, OnChanges, DoCh
     }, 500);   // Delayed to show loading icon.
   }
 
+  // This updates the UI with new menu as per current context or user selection.
   private setNewMenu(menuValue: string) {
     this.isPromptUpdated = true
     // Assume the previous menu is for Exchanges 
@@ -129,10 +131,12 @@ export class ChatMenuComponent implements OnInit, AfterViewInit, OnChanges, DoCh
           break;
 
         default:
+          // just a fallback
           console.error("menuType is incorrect", menuType)
           this.menuValues = this.dataFetchingService.getStockData();
           this.historyMenus[i] = JSON.parse(JSON.stringify(this.menuValues));
           this.historyMenus[i].title = this.getAppropriateTitle(this.menuValues);
+          break;
       }
 
       this.historyMenus[i].userResponse = menuValue;
@@ -150,6 +154,7 @@ export class ChatMenuComponent implements OnInit, AfterViewInit, OnChanges, DoCh
     }
   }
 
+  // Get an appropriate title for the new menu
   private getAppropriateTitle(stockData: any): string {
     try {
       if (stockData?.length > 0) {
